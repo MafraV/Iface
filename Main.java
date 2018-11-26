@@ -16,7 +16,7 @@ public class Main {
             System.out.print("What do you want to do?.\n");
             System.out.print("1 - Sing up;\n");
             System.out.print("2 - Sing in;\n");
-            System.out.print("3 - Turn off the system.\n");
+            System.out.print("3 - Turn off the system (Stop Program).\n");
             op = input.nextInt();
 
             if(op == 1)
@@ -52,9 +52,9 @@ public class Main {
                 iface.passwords.add(password);
                 iface.add(new_account);
 
-                System.out.print("Done!\n\n");
-                System.out.print("Want to do other operation?\n");
-                System.out.print("1 - Yes;\n2 - No.\n");
+                System.out.print("\nAccount registred!!\n\n");
+                System.out.print("Want to return to the Menu or Turn off the system?\n");
+                System.out.print("1 - Return to Menu;\n2 - Turn off the system (Stop Program).\n");
                 reop = input.nextInt();
 
 
