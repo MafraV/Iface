@@ -200,9 +200,12 @@ public class Main {
                             input.nextLine();
                             String friend_name = input.nextLine();
 
-                            while((!iface.names.contains(friend_name)) && (!Objects.equals(friend_name,"0")))
+                            while(((!iface.names.contains(friend_name)) && (!Objects.equals(friend_name,"0"))) || (Objects.equals(friend_name, logged.getName())))
                             {
-                                System.out.print("\nAccount not found, please try other name: \n");
+                                if(Objects.equals(friend_name, logged.getName())) System.out.print("You can't be friend of yourself! Please, try other name:\n");
+                                else System.out.print("\nAccount not found, please try other name: \n");
+
+
                                 System.out.print("Press 0 to give up.\n");
                                 friend_name = input.nextLine();
                             }
@@ -283,12 +286,16 @@ public class Main {
                                 input.nextLine();
                                 String receiver_name = input.nextLine();
 
-                                while(!logged.friend_names.contains(receiver_name))
+                                while(!logged.friend_names.contains(receiver_name) && (!Objects.equals(receiver_name, "0")))
                                 {
                                     System.out.print("\nFriend not found. Please, try another:\n");
+                                    System.out.print("Press 0 to give up.\n");
+
                                     receiver_name = input.nextLine();
                                 }
 
+                                if(!Objects.equals(receiver_name, "0"))
+                                {
                                     System.out.print("\nPlease, enter your message:\n");
                                     String body = input.nextLine();
 
@@ -302,7 +309,7 @@ public class Main {
 
                                     System.out.print("\nMessage sent!\n\n");
                                     System.out.print("Returning to main menu.\n\n");
-
+                                }
                             }
                         }
 
